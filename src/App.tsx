@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Education from './components/Education';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ScrollProgress />
+      <Nav />
+      <main>
+        <Hero />
+        <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--border-2), transparent)', margin: '0 auto', maxWidth: 1100 }} />
+        <About />
+        <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--border-2), transparent)', margin: '0 auto', maxWidth: 1100 }} />
+        <Skills />
+        <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--border-2), transparent)', margin: '0 auto', maxWidth: 1100 }} />
+        <Experience />
+        <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--border-2), transparent)', margin: '0 auto', maxWidth: 1100 }} />
+        <Projects />
+        <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--border-2), transparent)', margin: '0 auto', maxWidth: 1100 }} />
+        <Education />
+        <div style={{ height: 1, background: 'linear-gradient(90deg, transparent, var(--border-2), transparent)', margin: '0 auto', maxWidth: 1100 }} />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
-
-export default App;
