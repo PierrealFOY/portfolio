@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 const projects = [
@@ -11,7 +10,6 @@ const projects = [
     desc: 'Application full-stack déployée en production agrégant les offres de France Travail et Remotive. Authentification JWT, gestion des favoris / offres vues / candidatures, déploiement VPS avec Nginx et SSL via Certbot.',
     tech: ['Vue 3', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Docker', 'Nginx', 'OAuth2', 'Pinia'],
     github: 'https://github.com/PierrealFOY',
-    live: 'https://nextoffer.cloud',
     highlights: ['Production sur VPS OVH', 'SSL Let\'s Encrypt', 'API France Travail + Remotive'],
     screenshots: [`${process.env.PUBLIC_URL}/nextoffer1.png`, `${process.env.PUBLIC_URL}/nextoffer2.png`],
     accent: 'rgba(99,102,241,0.12)',
@@ -22,8 +20,6 @@ const projects = [
     tagline: 'Plateforme SaaS de gestion d\'entreprise',
     desc: 'Application multi-tenant complète : gestion de tickets, entreprises, employés et suivi du temps de travail. RBAC (Admin / Manager / Standard), rate limiting, système de migrations Alembic, suite de tests Pytest.',
     tech: ['Vue 3', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Redis', 'SQLAlchemy', 'TailwindCSS', 'Docker'],
-    github: 'https://github.com/PierrealFOY',
-    live: null,
     highlights: ['Multi-tenant SaaS', 'RBAC granulaire', 'Rate limiting Redis'],
     screenshots: [`${process.env.PUBLIC_URL}/saas1.png`, `${process.env.PUBLIC_URL}/saas2.png`],
     accent: 'rgba(168,85,247,0.12)',
@@ -185,24 +181,17 @@ export default function Projects() {
                         {p.tagline}
                       </p>
                     </div>
-                    <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0, paddingTop: '0.25rem' }}>
-                      <motion.a
-                        href={p.github} target="_blank" rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        style={{ width: 34, height: 34, borderRadius: 8, border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-3)' }}
-                        onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = 'var(--accent)'; el.style.borderColor = 'var(--border-2)'; el.style.background = 'var(--glow)'; }}
-                        onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = 'var(--text-3)'; el.style.borderColor = 'var(--border)'; el.style.background = 'transparent'; }}
-                      ><GithubIcon size={16} /></motion.a>
-                      {p.live && (
+                    {p.github && (
+                      <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0, paddingTop: '0.25rem' }}>
                         <motion.a
-                          href={p.live} target="_blank" rel="noopener noreferrer"
+                          href={p.github} target="_blank" rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           style={{ width: 34, height: 34, borderRadius: 8, border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-3)' }}
                           onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = 'var(--accent)'; el.style.borderColor = 'var(--border-2)'; el.style.background = 'var(--glow)'; }}
                           onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.color = 'var(--text-3)'; el.style.borderColor = 'var(--border)'; el.style.background = 'transparent'; }}
-                        ><ExternalLink size={16} /></motion.a>
-                      )}
-                    </div>
+                        ><GithubIcon size={16} /></motion.a>
+                      </div>
+                    )}
                   </div>
 
                   <p style={{ color: 'var(--text-2)', fontSize: '0.875rem', lineHeight: 1.75, flex: 1 }}>

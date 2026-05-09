@@ -123,11 +123,6 @@ const publicLinks = [
     label: 'linkedin.com/in/pierre-alexis-foy',
     href: 'https://www.linkedin.com/in/pierre-alexis-foy',
   },
-  {
-    icon: <ExternalLink size={16} />,
-    label: 'nextoffer.cloud',
-    href: 'https://nextoffer.cloud',
-  },
 ];
 
 export default function Contact() {
