@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ExternalLink, MapPin, ArrowDown } from 'lucide-react';
+import { Mail, MapPin, ArrowDown } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Hero() {
@@ -165,7 +165,7 @@ export default function Hero() {
               style={{ position: 'absolute', inset: -28, borderRadius: '50%', border: '1px dashed rgba(99,102,241,0.15)' }}
             />
             <div style={{ width: '100%', height: '100%', borderRadius: '50%', border: '3px solid var(--bg-3)', overflow: 'hidden' }}>
-              <img src="/photo_profil.jpg" alt="Pierre-Alexis Foy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <img src={`${process.env.PUBLIC_URL}/photo_profil.jpg`} alt="Pierre-Alexis Foy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           </div>
 

@@ -13,7 +13,7 @@ const projects = [
     github: 'https://github.com/PierrealFOY',
     live: 'https://nextoffer.cloud',
     highlights: ['Production sur VPS OVH', 'SSL Let\'s Encrypt', 'API France Travail + Remotive'],
-    screenshots: ['/nextoffer1.png', '/nextoffer2.png'],
+    screenshots: [`${process.env.PUBLIC_URL}/nextoffer1.png`, `${process.env.PUBLIC_URL}/nextoffer2.png`],
     accent: 'rgba(99,102,241,0.12)',
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     github: 'https://github.com/PierrealFOY',
     live: null,
     highlights: ['Multi-tenant SaaS', 'RBAC granulaire', 'Rate limiting Redis'],
-    screenshots: ['/saas1.png', '/saas2.png'],
+    screenshots: [`${process.env.PUBLIC_URL}/saas1.png`, `${process.env.PUBLIC_URL}/saas2.png`],
     accent: 'rgba(168,85,247,0.12)',
   },
 ];
